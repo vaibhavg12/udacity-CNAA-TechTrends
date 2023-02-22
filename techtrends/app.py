@@ -21,7 +21,7 @@ def get_post(post_id):
     return post
 
 # Function to get connections count from number of posts
-def retrieve_metrics_from_articles_count(metrics_object):
+def retrieve_metrics(metrics_object):
     """
     Count the number of news articles and increment the number of connections used for them
     Parameters:
@@ -102,7 +102,7 @@ def metrics():
         'posts_count': None
     }
 
-    retrieve_metrics_from_articles_count(metrics_object)
+    retrieve_metrics(metrics_object)
 
     response = app.response_class(
         response=json.dumps(metrics_object),
