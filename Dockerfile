@@ -1,4 +1,4 @@
-FROM python:3.11.2-alpine3.16
+FROM python:3.8.16-alpine3.16
 
 LABEL org.opencontainers.image.authors="Vaibhav Gupta"
 
