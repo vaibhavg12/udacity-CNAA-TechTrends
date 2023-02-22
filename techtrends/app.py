@@ -32,7 +32,7 @@ def retrieve_metrics_from_articles_count(metrics_object):
     connection.close()
 
     metrics_object['db_connection_count'] += 1
-    metrics_object['post_count'] = article_count[0]    
+    metrics_object['posts_count'] = article_count[0]    
 
 # Define the Flask application
 app = Flask(__name__)
