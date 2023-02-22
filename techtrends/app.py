@@ -80,6 +80,7 @@ def create():
             connection.commit()
             connection.close()
 
+            logging.info('Article "{}" created'.format(title))
             return redirect(url_for('index'))
 
     return render_template('create.html')
