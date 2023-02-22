@@ -1,11 +1,32 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build -t vaibhavg12/techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -d --name techtrends -p 7111:3111 vaibhavg12/techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker logs -f techtrends
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+2023-02-21 22:37:25  * Serving Flask app 'app' (lazy loading)
+2023-02-21 22:37:25  * Environment: production
+2023-02-21 22:37:25    WARNING: This is a development server. Do not use it in a production deployment.
+2023-02-21 22:37:25    Use a production WSGI server instead.
+2023-02-21 22:37:25  * Debug mode: off
+2023-02-21 22:37:25 WARNING:werkzeug: * Running on all addresses.
+2023-02-21 22:37:25    WARNING: This is a development server. Do not use it in a production deployment.
+2023-02-21 22:37:25 INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+2023-02-21 22:39:57 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:39:57] "GET / HTTP/1.1" 200 -
+2023-02-21 22:39:57 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:39:57] "GET /static/css/main.css HTTP/1.1" 200 -
+2023-02-21 22:39:57 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:39:57] "GET /favicon.ico HTTP/1.1" 404 -
+2023-02-21 22:40:20 INFO:root:"About Us" page is retrieved
+2023-02-21 22:40:20 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:40:20] "GET /about HTTP/1.1" 200 -
+2023-02-21 22:40:20 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:40:20] "GET /static/css/main.css HTTP/1.1" 304 -
+2023-02-21 22:40:23 INFO:root:Article "CNCF Cloud Native Interactive Landscape" retrieved!
+2023-02-21 22:40:23 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:40:23] "GET /4 HTTP/1.1" 200 -
+2023-02-21 22:40:23 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:40:23] "GET /static/css/main.css HTTP/1.1" 304 -
+2023-02-21 22:40:29 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:40:29] "GET /healthz HTTP/1.1" 200 -
+2023-02-21 22:40:36 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:40:36] "GET /metrics HTTP/1.1" 200 -
+2023-02-21 22:40:39 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:40:39] "GET /metrics HTTP/1.1" 200 -
+2023-02-21 22:40:45 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:40:45] "GET / HTTP/1.1" 200 -
+2023-02-21 22:40:45 INFO:werkzeug:172.17.0.1 - - [22/Feb/2023 03:40:45] "GET /static/css/main.css HTTP/1.1" 304 -
