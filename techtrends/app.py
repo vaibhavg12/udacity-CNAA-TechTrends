@@ -1,15 +1,19 @@
 import logging
 import sqlite3
-
+import sys
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
+
+#keep count of all access made to db
+db_calls_count = 0
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 def get_db_connection():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
+    db_calls_count +=1
     return connection
 
 # Function to get a post using its ID
@@ -31,7 +35,7 @@ def retrieve_metrics(metrics_object):
     article_count = connection.execute('SELECT count(*) FROM posts').fetchone()
     connection.close()
 
-    metrics_object['db_connection_count'] += 1
+    metrics_object['db_connection_count'] = db_calls_count
     metrics_object['posts_count'] = article_count[0]    
 
 # Define the Flask application
@@ -114,5 +118,8 @@ def metrics():
 
 # start the application on port 3111
 if __name__ == "__main__":
-   logging.basicConfig(level=logging.DEBUG)
+   stdout_handler = logging.StreamHandler(sys.stdout)
+   sdterr_handler = logging.StreamHandler(sys.stderr)
+   logging.basicConfig(handlers = [stdout_handler, sdterr_handler],level=logging.DEBUG)
    app.run(host='0.0.0.0', port='3111')
+   
