@@ -13,6 +13,7 @@ db_calls_count = 0
 def get_db_connection():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
+    global db_calls_count
     db_calls_count +=1
     return connection
 
